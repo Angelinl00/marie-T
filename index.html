@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marie-Thérèse</title>
+    <style>
+        *
+        {
+            margin : 0 ;
+            padding : 0 ;
+            box-sizing : border-box ;
+        }
+        :root
+        {
+            --clr1 : #c98181 ;
+            --clr2 : #722e2e ;
+            --button : #161f6e ;
+            --shadow : #0000ff ;
+        }
+        body
+        {
+            display: flex;
+            flex-direction : column ;
+            justify-content : center ;
+            align-items : center ;
+            color : #fff ;
+            background-color : var(--clr1) ;
+            min-height : 100vh ;
+        }
+        .card
+        {
+            cursor : pointer ;
+            display : flex ;
+            flex-direction : row ;
+            width : 700px ;
+            height : 500px ;
+            background-color : #fff ;
+            /*border : 1px solid #000 ;*/
+            border-radius : 10px ;
+            box-shadow : 10px 10px 10px var(--clr2) ;
+        }
+        .card2
+        {
+            cursor : pointer ;
+            /* display : flex ; */
+            display : none ;
+            flex-direction : column ;
+            width : 700px ;
+            height : 400px ;
+            background-image : url('building-102840.jpg') ;
+            background-size : cover ;
+            background-position: center ;
+            /*filter : blur(2px) ;*/
+            align-items : center ;
+            /*border : 1px solid #000 ;*/
+            border-radius : 10px ;
+            box-shadow : 10px 10px 10px var(--clr2) ;
+            justify-content: center ;
+            color : rgb(255, 255, 255) ;
+            font-size : 40px ;
+            font-family : consolas ;
+        }
+
+        #img
+        {
+            display : flex ;
+            flex-direction : column ;
+            align-items : center ;
+            height : 100% ;
+            width : 40% ;
+            background-image : url('MT.jpg') ;
+            background-position : center ;
+            background-size : cover ;
+            background-repeat : no-repeat ;
+            border-top-left-radius: 10px ;
+            border-bottom-left-radius: 10px ;
+            /*background-attachment : fixed ;*/
+        }
+        #img2
+        {
+            height : 100% ;
+            width : 60% ;
+            background-image: url('card2.jpg');
+            background-position : center ;
+            background-size : cover ;
+            background-repeat : no-repeat ;
+            border-top-right-radius: 10px ;
+            border-bottom-right-radius: 10px ;
+        }
+        #img button
+        {
+            margin-top : 10px ;
+            width : 150px ;
+            border : none ;
+            border-radius : 5px ;
+            height : 40px ;
+            color : #fff ;
+            background-color : var(--button) ;
+            font-size : 22px ;
+            transition : .2s ;
+            /*box-shadow : 10px 10px 10px var(--shadow) , -10px 10px 10px var(--shadow)  ;*/
+        }
+        #img button:hover 
+        {
+            box-shadow : 10px 10px 10px var(--shadow) , -10px 10px 10px var(--shadow)  ;
+            transform : translateX(-2px) ;
+        }
+        @media screen and (max-width : 500px )
+        {
+            .card
+            {
+                display : flex ;
+                flex-direction : column;
+                width : 90% ;
+                height : 1000px ;
+            }
+            #img
+            {
+                width : 100% ;
+                border-bottom-left-radius : 0px ;
+                border-top-right-radius: 10px ;
+            }
+            #img2
+            {
+                width : 100% ;
+            }
+            .card2
+            {
+                width : 90% ;
+                height : 1000px ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div id="img">
+            <button>
+                <p>clique ici</p>
+            </button>
+        </div>
+        <div id="img2"></div>
+    </div>
+    <div class="card2">
+        <p>Je te souhaite un très joyeux anniversaire car tu es quelqu'un qui compte énormément pour moi et que j'apprécie beaucoup. j'espère être ton ami pour la vie et te souhaite tout le bonheur du monde car tu es vraiment quelqu'un de spécial.</p><br><h6>Angelin</h6>
+    </div>
+
+    <script>
+        var body = document.querySelector(body) ;
+        var btn = document.querySelector('button') ;
+        console.log(btn) ;
+        var card = document.querySelector('.card') ;
+        var card2 = document.querySelector('.card2') ;
+        console.log(card2) ;
+        console.log(card) ;
+        btn.addEventListener('click' , function(){
+            if(card.classList.contains('backface')){
+                console.log('ok') ;
+            }
+            else{
+                card.style.display = 'none' ;
+                card2.style.display = 'flex' ;
+            } ;
+        })
+    </script>
+</body>
+</html>
